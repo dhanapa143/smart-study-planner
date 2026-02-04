@@ -3,31 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <title>Smart Study Planner</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #5b3cc4, #7b7df0, #d7a7f7);
+      color: #ffffff;
+    }
+
+    /* NAVBAR */
+    header {
+      padding: 20px 60px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #eaeaff;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      background: #ffffff;
+      border-radius: 5px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+      color: #f2f2ff;
+    }
+
+    /* ILLUSTRATION */
+    .illustration {
+      margin: 50px auto;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .illustration svg {
+      width: 220px;
+    }
+
+    /* BUTTON */
+    .btn {
+      margin-top: 30px;
+      padding: 14px 40px;
+      background: #ffd34d;
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* WAVES (BOTTOM EFFECT) */
+    .wave {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 120px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 100% 100% 0 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+      header {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Smart Study Planner</h1>
-  <nav>
-    <a class="active" href="index.html">Home</a>
-    <a href="setup.html">Setup</a>
-    <a href="planner.html">Planner</a>
-    <a href="care.html">Care Mode</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="logo">Smart Study Planner</div>
+      <nav>
+        <a href="#" class="active">Home</a>
+        <a href="#">Setup</a>
+        <a href="#">Planner</a>
+        <a href="#">Care Mode</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-  <h2>Study smarter, not harder 🎧</h2>
-  <p>
-    An offline, audio-first study companion designed for engineering students.<br>
-    No distractions. No pressure.
-  </p>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Study smarter, not harder 🎧</h1>
+    <p>
+      An offline, audio-first study companion designed for engineering students.<br>
+      No distractions. No pressure.
+    </p>
 
-  <img src="assets/student.png" alt="Student illustration">
+    <!-- Illustration -->
+    <div class="illustration">
+      <!-- Simple SVG illustration -->
+      <svg viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="80" fill="#ffffff"/>
+        <circle cx="100" cy="70" r="18" fill="#f2c4a5"/>
+        <rect x="65" y="90" width="70" height="60" rx="12" fill="#4a6cf7"/>
+        <rect x="80" y="105" width="40" height="35" rx="5" fill="#ff6f61"/>
+        <rect x="55" y="85" width="20" height="50" rx="10" fill="#3b3b3b"/>
+        <rect x="125" y="85" width="20" height="50" rx="10" fill="#3b3b3b"/>
+      </svg>
+    </div>
 
-  <button onclick="location.href='setup.html'">Get Started</button>
-</section>
+    <!-- Button -->
+    <button class="btn">Get Started</button>
+  </section>
 
 </body>
 </html>
