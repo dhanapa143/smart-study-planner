@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Study Planner</title>
+  <title>Planner</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>Study Planner</header>
+<header>
+  <h1>Planner</h1>
+</header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="setup.html">Setup</a>
-  <a href="planner.html">Planner</a>
-  <a href="care.html">Care Mode</a>
-</nav>
+<section class="hero">
+  <p>Press play and listen while traveling or resting.</p>
 
-<div class="container">
-  <h2 id="greet"></h2>
-  <p>Ready to study? I can guide you by voice.</p>
+  <button onclick="speak('Congratulations, you completed the task successfully')">
+    ▶ Motivation Audio
+  </button>
 
-  <button onclick="startStudy()">Start Study Session</button>
-</div>
+  <br><br>
 
-<script src="js/app.js"></script>
-<script>
-  let name = localStorage.getItem("studentName") || "Student";
-  document.getElementById("greet").innerText =
-    "Hello " + name + " 👋";
-</script>
+  <button onclick="speak('Now take a break for five minutes')">
+    ☕ Break Reminder
+  </button>
+</section>
 
+<script src="js/voice.js"></script>
 </body>
 </html>
