@@ -1,14 +1,6 @@
 function speak(text) {
-  let msg = new SpeechSynthesisUtterance(text);
+  const msg = new SpeechSynthesisUtterance(text);
+  msg.rate = 0.9;
+  msg.pitch = 1;
   window.speechSynthesis.speak(msg);
-}
-
-function saveName() {
-  let name = document.getElementById("name").value;
-  if (name === "") {
-    speak("Please enter your name");
-    return;
-  }
-  localStorage.setItem("studentName", name);
-  speak("Welcome " + name + ". Your profile is saved.");
 }
